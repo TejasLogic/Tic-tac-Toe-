@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Real-Time Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎮 Real-Time Tic Tac Toe</h1>
+      <button id="settingsBtn" class="settings-icon" aria-label="Settings">⚙️</button>
+    </header>
+
+    <!-- Settings Menu -->
+    <div id="settingsMenu" class="hidden">
+      <h3>Settings</h3>
+      <label>
+        <input type="checkbox" id="toggleSound" checked />
+        Enable Sound
+      </label>
+    </div>
+
+    <!-- Start Menu -->
+    <div id="startMenu">
+      <input type="text" id="playerName" placeholder="Enter your name" />
+      <br />
+      <button onclick="createGame()">🆕 Create Game</button>
+      <br />
+      <input type="text" id="gameCodeInput" placeholder="Enter Game Code" />
+      <button onclick="joinGame()">🔗 Join Game</button>
+    </div>
+
+    <!-- Game Area -->
+    <div id="gameArea" class="hidden">
+      <h2>Game Code: <span id="gameCodeDisplay"></span></h2>
+      <div id="board" role="grid" aria-label="Tic Tac Toe Board"></div>
+      <p id="statusText" aria-live="polite"></p>
+      <div class="game-controls">
+        <button onclick="goBack()">⬅️ Back</button>
+        <button onclick="resetGame()">🔄 Reset</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
